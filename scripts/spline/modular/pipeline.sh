@@ -1,7 +1,7 @@
 #!/bin/bash
 
-n=10
-reference="best"
+n=11
+reference="multi"
 group="all"
 
 set -e # Exit when any command fails
@@ -113,7 +113,7 @@ echo -e "\n[*] Preprocessing step 2 (R)"
 Rscript $pipeline/preprocess.R $respath
 
 # Clean dir
-echo -e "\n[*] Cleaning remote dir"
+echo -e "\n[*] Cleaning remote dir" #TODO: add condition
 ssh $server "rm -r $clusterpath/$reference-$group"
 
 # Upload

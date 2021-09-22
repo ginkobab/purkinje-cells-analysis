@@ -5,6 +5,7 @@ src/lfads
 figures/
 plots/
 python/notebooks/
+docs/internship*
 
 *.directory
 *.RData

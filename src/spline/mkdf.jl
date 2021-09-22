@@ -77,10 +77,10 @@ function relativetime(lift, cover, grasp, t, tmax)
 	covergrasp = cl .<= t .< gl
 	aftergrasp = t .>= gl
 
-	y[beforelift] = 2 .- t[beforelift] ./ tmax[1] * 2 
-	y[liftcover] = 2 .+ t[liftcover] ./ cl
-	y[covergrasp] = 3 .+ (t[covergrasp] .- cl) ./ gc
-	y[aftergrasp] = 4 .+ (t[aftergrasp] .- gl) ./ (tmax[2] .- gl) * 2
+	y[beforelift] = 1 .+ t[beforelift] ./ sum(beforelift)
+	y[liftcover] = 1 .+ t[liftcover] ./ cl
+	y[covergrasp] = 2 .+ (t[covergrasp] .- cl) ./ gc
+	y[aftergrasp] = 3 .+ (t[aftergrasp] .- gl) ./ sum(aftergrasp)
 
 	y
 end
